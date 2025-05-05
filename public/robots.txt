@@ -1,0 +1,13 @@
+# robots.txt
+
+# Allow all user agents to access everything
+User-agent: *
+Disallow:
+
+# Block access to sensitive directories
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://yourwebsite.com/sitemap.xml
