@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import DashboardSidebar from "./DashboardSidebar";
+import DashboardSidebar from "./DashboardSidebar"; 
 
 export const metadata: Metadata = {
   title: "لوحة التحكم",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-100 text-right custom-bg">
-      <DashboardSidebar />
+      <DashboardSidebar /> 
       <main className="flex-1 p-6 md:p-8 mt-16 md:mt-0 overflow-auto h-screen">{children}</main>
     </div>
   );

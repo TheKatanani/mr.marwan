@@ -3,9 +3,9 @@
 import Link from "next/link";
 import React from "react";
 
-const CardCources = ({ plan }: { plan: { title: string } }) => {
+const CardCources  = ({ plan }: { plan: { title: string } }) => {
   return (
-    <div className="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+    <div className="flex flex-col justify-between bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
       <h3 className="text-xl font-bold mb-4">{plan.title}</h3>
 
       <p className="text-sm text-right text-gray-600 space-y-3 mb-6">
@@ -17,7 +17,7 @@ const CardCources = ({ plan }: { plan: { title: string } }) => {
         <li>✔️ نص مثالي لاستبداله بمحتوى حقيقي.</li>
         <li>✔️ نص مثالي لاستبداله بمحتوى حقيقي.</li>
       </ul>
-      <Link href={"https://forms.gle/Da7jXvckNFan7Bar5"} target="_blank">
+      <Link href={""} target="_blank">
         <button className="btn-primary mt-5 cursor-pointer hover:bg-pink-700 ">
           اطلب الآن
         </button>
@@ -26,4 +26,4 @@ const CardCources = ({ plan }: { plan: { title: string } }) => {
   );
 };
 
-export default CardCources;
+export default CardCources ;

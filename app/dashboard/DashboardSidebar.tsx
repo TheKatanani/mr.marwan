@@ -10,9 +10,10 @@ import X from '@/app/icons/CloseIcon';
 
 const dashboardLinks = [
   { href: '/dashboard/about', label: 'من نحن' },
-  { href: '/dashboard/cources', label: 'الدورات' },
+  { href: '/dashboard/services', label: 'الخدمات' },
   { href: '/dashboard/faq', label: 'الأسئلة الشائعة' },
   { href: '/dashboard/posts', label: 'المدونة' },
+  { href: '/dashboard/logo', label: 'الشعار' },
 ];
 
 export default function DashboardSidebar() {

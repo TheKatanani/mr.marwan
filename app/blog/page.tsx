@@ -1,6 +1,6 @@
 /** @format */
 
-import Title from "../components/Title";
+import Titile from "../components/Titile";
 import { getPosts } from "../lib/posts";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -19,7 +19,7 @@ export default async function Blog() {
       dir="rtl"
       className="bg-gradient-to-r py-25 from-white via-[#e3f9ff] to-white max-w-5xl mx-auto p-4 text-gray-800 min-h-screen grid place-items-center"
     >
-      <Title className="pt-8">المدونة</Title>
+      <Titile className="pt-8">المدونة</Titile>
 
       {posts.length === 0 ? (
         <p className="text-center text-gray-500 pt-10">

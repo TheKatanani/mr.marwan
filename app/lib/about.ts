@@ -1,12 +1,13 @@
+import { About } from "@/types/about";
 import { db } from "./firebase"; // Adjust path as needed
 import { doc, getDoc, setDoc } from "firebase/firestore";
 
-export async function getAboutData() {
+export async function getAboutData() : Promise<About> {
   const docRef = doc(db, "about", "b3S8IfsOYkhM0Tc7fCKd");
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    return docSnap.data();
+    return docSnap.data() as About;
   } else {
     throw new Error("No about data found");
   }

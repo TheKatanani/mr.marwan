@@ -1,44 +1,48 @@
+/** @format */
+
 import Image from "next/image";
 import Container from "./Container";
-import Title from "./Title";
-import { getAboutData } from "../lib/about"; 
-const About =async () => {
-  const aboutData =await getAboutData()
+import Titile from "./Titile";
+import type { About } from "@/types/about";
+import ArrowIcon from "../icons/ArrowIcon";
+const About = async ({ aboutData }: { aboutData: About }) => {
   return (
     <section
       id="about"
       className="w-full bg-gradient-to-r from-white via-[#e3f9ff] to-white  text-white py-16 min-h-screen grid place-items-center relative"
     >
-      <Container className="pt-5 md:pt-0 ">
-            <Title>{aboutData.title}</Title>
+      <Container className="pt-5 md:pt-0">
+        <Titile>{aboutData.title}</Titile>
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Text Section */}
-          <div className="md:w-1/2 flex flex-col space-y-6 text-right relative px-4 pt-30 md:pt-0 "> 
+          <div className="md:w-1/2 flex flex-col space-y-6 text-right px-4 pt-30 md:pt-0 ">
             <p className="text-lg leading-8 text-gray-800">
-             {aboutData.description}
+              {aboutData.description}
             </p>
             <p className="text-md leading-7 text-gray-800">
-            {aboutData?.description2} 
+              {aboutData?.description2}
             </p>
-            <button className="btn-primary w-fit">اطلب الخدمة الآن</button>
+            <button className="btn-primary w-fit pb-20 relative">اطلب الخدمة الآن
+            <ArrowIcon className="absolute right-[50] bottom-[-250] hidden md:block"/> 
+              </button> 
           </div>
 
           {/* Image Section */}
           <div className="md:w-1/2 flex justify-center relative pt-30 md:pt-0  order-[-1] md:order-1">
             <Image
-              src="/about.jpg"
+              src={aboutData.aboutImage || "/about.jpg"}
               alt="About us"
               width={380}
               height={315}
               className="rounded-2xl shadow-lg"
-              style={{ zIndex: 1 }}  
+              style={{ zIndex: 1 }}
             />
             <Image
               src="/ideas.png"
               alt="About us"
               width={330}
               height={495}
-              className="absolute z-0 top-5  md:top-[-60px] right-[50px]" 
+              className="absolute z-0 top-5  md:top-[-60px] right-[50px]"
             />
           </div>
         </div>
