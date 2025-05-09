@@ -14,6 +14,7 @@ const dashboardLinks = [
   { href: '/dashboard/faq', label: 'الأسئلة الشائعة' },
   { href: '/dashboard/posts', label: 'المدونة' },
   { href: '/dashboard/logo', label: 'الشعار' },
+  { href: '/dashboard/social-media', label: 'مواقع التواصل' },
 ];
 
 export default function DashboardSidebar() {

@@ -1,15 +1,27 @@
 "use client"; 
 import Link from "next/link";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import WhatsAppIcon from "../icons/WhatsAppIcon";
+import { getSocialLinks } from "../lib/socialMedia";
 
 const FloatingWhatsAppButton = () => {
   const [hasUnread, setHasUnread] = useState(true);
-  const phoneNumber = "1234567890";
+  
+  const [phoneNumber,setPhoneNumber] = useState<string>("");   
   const defaultMessage = "Hello! I have a question about your services.";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
-
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getSocialLinks();
+        setPhoneNumber(data.whatsapp || "12345677890"); // Fallback to a default number if not found
+      } catch (error) {
+        console.error("Error fetching WhatsApp number:", error);
+      }
+    };
+    fetchData(); 
+  },[])
   return (
     <div className="fixed bottom-6 right-6 z-50 group">
       <Link 
