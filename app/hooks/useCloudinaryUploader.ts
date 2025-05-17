@@ -29,7 +29,7 @@ export function useCloudinaryUploader() {
       const data = await res.json();
       if (data.secure_url) {
         setUrl(data.secure_url);
-        return data.secure_url; // You can store this in Firestore
+        return data.secure_url || null;
       } else {
         throw new Error(data.error?.message || "Upload failed");
       }

@@ -44,7 +44,7 @@ function ImageCard({
         />
       ) : (
         <div className="w-full h-24 flex items-center justify-center rounded border border-dashed text-gray-400 text-sm bg-white">
-          No logo uploaded
+          No image uploaded
         </div>
       )}
 

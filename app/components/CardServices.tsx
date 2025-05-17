@@ -1,5 +1,3 @@
-/** @format */
-
 import { Service } from "@/types/servece";
 import Link from "next/link";
 import React from "react";
@@ -12,7 +10,7 @@ const CardServices = ({ service }: { service: Service }) => {
       <p className="text-sm text-right text-gray-600 space-y-3 mb-6">
         {service?.description ? (
           <>
-            {service.description.length > 200
+            {service?.description.length > 200
               ? `${service.description.slice(0, 200)}...`
               : service.description}
           </>

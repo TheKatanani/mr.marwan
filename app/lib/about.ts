@@ -1,34 +1,16 @@
-import { About } from "@/types/about";
-import { db } from "./firebase"; // Adjust path as needed
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore"
+import { db } from "./firebase"
+import { AboutFormData } from "@/types/about"
 
-export async function getAboutData() : Promise<About> {
-  const docRef = doc(db, "about", "b3S8IfsOYkhM0Tc7fCKd");
-  const docSnap = await getDoc(docRef);
+const aboutPageRef = doc(db, 'aboutPage', 'mainContent')
 
-  if (docSnap.exists()) {
-    return docSnap.data() as About;
-  } else {
-    throw new Error("No about data found");
-  }
+// Get the About page content
+export const fetchAboutPage = async (): Promise<AboutFormData | null> => {
+  const docSnap = await getDoc(aboutPageRef)
+  return docSnap.exists() ? (docSnap.data() as AboutFormData) : null
 }
 
-export async function updateAboutData({
-  title,
-  description,
-  aboutImage,
-  mainVideo,
-}: {
-  title: string;
-  description: string;
-  aboutImage: string; // should be Cloudinary URL
-  mainVideo: string;  // should be Cloudinary URL or YouTube
-}) {
-  const docRef = doc(db, "about", "b3S8IfsOYkhM0Tc7fCKd");
-  await setDoc(docRef, {
-    title,
-    description,
-    aboutImage,
-    mainVideo,
-  });
+// Update the About page content
+export const updateAboutPage = async (updates: Partial<AboutFormData>) => {
+  await updateDoc(aboutPageRef, updates)
 }

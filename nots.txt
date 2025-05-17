@@ -1,0 +1,6 @@
+lazy loading for havy component like the gallery
+improve the SEO
+add whatsApp scrolled icon
+contact page
+social media page
+cheack the responsive for the full website 

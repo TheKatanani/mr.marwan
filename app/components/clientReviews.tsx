@@ -4,7 +4,7 @@
 
 import ReviewCard from "./reviewCard";
 // import Image from "next/image";
-import Titile from "./Titile";
+import Title from "./Titile";
 export default function ClientReviews({
   reviews,
 }: {
@@ -16,9 +16,9 @@ export default function ClientReviews({
       dir="rtl"
     >
       <div className="container m-auto px-4 ">
-        <Titile className="mb-12 pb-10 m-auto w-fit">
+        <Title className="mb-12 pb-10 m-auto w-fit">
           ماذا يقول زبائننا عنا
-        </Titile>
+        </Title>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, idx) => (
             <ReviewCard qoute={review.qoute} rating={review.rating} key={idx} />

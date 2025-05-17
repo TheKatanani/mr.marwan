@@ -6,7 +6,7 @@ interface ContainerProps {
   className?: string;
 }
 
-const Titile = ({ className, children }: ContainerProps) => {
+const Title = ({ className, children }: ContainerProps) => {
   return (
     <div className={`relative ${className}`}>
       <span className="bg-gradient-to-br w-[184] h-[165] from-[#e3f9ff] to-white rounded-full absolute top-[-80] right-[-90] z-0"></span>
@@ -15,4 +15,4 @@ const Titile = ({ className, children }: ContainerProps) => {
   );
 };
 
-export default Titile;
+export default Title;

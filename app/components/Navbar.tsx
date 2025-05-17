@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between md:p-4 z-1 relative">
           {/* Logo on the right */}
           <Link href="/" className="flex items-center">
-            <Image src={logoUrl ||"/logo.png"} className="h-[70] object-contain" alt="Logo" width={140} height={60} />
+            <Image src={logoUrl ||"/logo.png"} className="h-[70] w-auto object-contain" alt="Logo" width={140} height={60} />
           </Link>
 
           {/* Desktop Links */}
@@ -83,7 +83,7 @@ const Navbar = () => {
                   href={href}
                   onClick={toggleMenu}
                   className={`transition ${
-                    isActive ? "text-red-500 font-bold" : "text-white"
+                    isActive ? "text-pink-500 font-bold" : "text-white"
                   }`}
                 >
                   {label}
