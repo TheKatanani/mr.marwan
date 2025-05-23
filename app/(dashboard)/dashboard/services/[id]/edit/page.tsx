@@ -1,20 +1,22 @@
+/** @format */
+
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { Service } from "@/types/servece";
 import { getService, updateService } from "@/app/lib/services";
 import Title from "@/app/components/Titile";
 import ServiceForm from "../../Form";
-const EditServicePage = ({ params }: { params: { id: string } }) => {
-  const id = params.id;
+const EditServicePage = () => {
+  const { id } = useParams();
   const router = useRouter();
   const [serviceData, setServiceData] = useState<Service | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchServiceData = async () => {
-      const service = await getService(params.id);
+      const service = await getService(id as string);
       setServiceData(service);
       setLoading(false);
     };
@@ -23,7 +25,7 @@ const EditServicePage = ({ params }: { params: { id: string } }) => {
   }, [id]);
 
   const handleSubmit = async (data: Service) => {
-    await updateService(id, data);
+    await updateService(id as string, data);
     router.push("/services"); // Redirect to the services page after updating
   };
 
