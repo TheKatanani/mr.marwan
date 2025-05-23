@@ -38,7 +38,7 @@ function Features({ features, featuresImage }: Partial<Service>) {
         {/* Image Section */}
         <div className="relative w-full max-w-sm sm:max-w-md mx-auto">
           {/* Green background layer */}
-          <div className="absolute bg-blue-200 rounded-[2rem] -top-5 -left-5 right-2.5 bottom-2.5 z-0 rounded-tr-none rounded-bl-none" />
+          <div className="absolute bg-blue-200 rounded-[2rem] -top-5 -start-5 end-2.5 bottom-2.5 z-0 rounded-tr-none rounded-bl-none" />
 
           {/* Image wrapper with matching clipping */}
           <div className="overflow-hidden rounded-[1.8rem] rounded-tr-none rounded-bl-none relative z-10">

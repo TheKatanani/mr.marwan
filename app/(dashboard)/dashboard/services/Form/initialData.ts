@@ -28,5 +28,5 @@ export const emptyService: Service = {
       rating: 5,
     },
   ],
-  partners: [""],
+  partners: [],
 };

@@ -1,9 +1,11 @@
+/** @format */
+
 import { getService } from "@/app/lib/services";
 import ServiceClientPage from "./ClientService";
 import { Suspense } from "react";
-import ServicesSkeleton from "@/app/components/ui/ServicesSkeleton"; 
+import ServicesSkeleton from "@/app/components/ui/ServicesSkeleton";
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 export async function generateMetadata({ params }: Props) {
   const { id } = await params;
@@ -26,13 +28,13 @@ export async function generateMetadata({ params }: Props) {
       ],
     },
   };
-} 
+}
 export default async function ServicePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;  
+  const { id } = await params;
 
   return (
     <Suspense fallback={<ServicesSkeleton />}>

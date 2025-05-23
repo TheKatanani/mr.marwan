@@ -5,7 +5,7 @@ import { fetchCourse } from "@/app/lib/cource";
 import Image from "next/image";
 import Link from "next/link";
 
-async function page({ params }: { params: { id: string } }) {
+async function page({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const courses = await fetchCourse(id);
   return (

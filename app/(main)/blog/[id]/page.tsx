@@ -1,20 +1,19 @@
-/** @format */
-
 import { getPostById } from "@/app/lib/posts";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type BlogPostPageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 export const metadata: Metadata = {
   title: "تفاصيل المقالة",
-  description: "موقع الدكتور مروان العزاوي - تفاصيل المقالة",  
+  description: "موقع الدكتور مروان العزاوي - تفاصيل المقالة",
 };
 
 export default async function page({ params }: BlogPostPageProps) {
-  const post = await getPostById(params.id);
+  const { id } = await params;
+  const post = await getPostById(id);
 
   if (!post) {
     notFound(); // Show 404 if post not found
@@ -22,15 +21,18 @@ export default async function page({ params }: BlogPostPageProps) {
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 pt-30 min-h-screen grid place-content-center">
-      <h1 className="text-3xl font-bold text-gray-900 mb-4 flex
-       items-center gap-2">
+      <h1
+        className="text-3xl font-bold text-gray-900 mb-4 flex
+       items-center gap-2"
+      >
         <Image
-        src="/smallLogoMarwan.PNG"
-        alt="small Logo"
-        width={40}
-        height={40} 
+          src="/smallLogoMarwan.PNG"
+          alt="small Logo"
+          width={40}
+          height={40}
         />
-        {post.title}</h1>
+        {post.title}
+      </h1>
       <p className="text-gray-500 text-sm mb-6">
         {post.createdAt instanceof Date
           ? new Date(post.createdAt).toLocaleDateString("ar-EG", {
@@ -40,7 +42,9 @@ export default async function page({ params }: BlogPostPageProps) {
             })
           : ""}
       </p>
-      <div className="text-lg text-gray-800 leading-relaxed whitespace-pre-wrap"> {post.content} 
+      <div className="text-lg text-gray-800 leading-relaxed whitespace-pre-wrap">
+        {" "}
+        {post.content}
       </div>
     </main>
   );
