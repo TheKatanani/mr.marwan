@@ -21,7 +21,7 @@ export default async function Hero() {
       >
         <div className=" bg-black/60 absolute inset-0" />
         <div className="container mx-20 z-10 max-w-3xl  justify-center md:justify-start">
-          <h1 className="text-2xl  md:text-4xl  font-bold mb-4 text-pink-500">
+          <h1 className="text-2xl  md:text-4xl  font-bold mb-4 bg-gradient-to-r from-[#048ff8] via-yellow-500 to-[#0b2de4] bg-clip-text text-transparent">
             {HeroData?.title}
           </h1>
           <p className="text-sm md:text-xl mb-6 leading-8">
