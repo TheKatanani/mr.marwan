@@ -25,7 +25,7 @@ const CourseCard = (course: Course) => {
         <p className="text-sm text-gray-500">{course.trainer}</p>
 
         {course.type === "free" ? (
-          <p className="text-lg text-black font-bold">مجاني</p>
+          <p className="text-lg text-[#BB8819] font-bold">مجاني</p>
         ) : (
           <div className="flex justify-between items-center">
             <Link href={course.btnLink} target="_blank">

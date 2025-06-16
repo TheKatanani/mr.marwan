@@ -22,14 +22,15 @@ export default async function page({ params }: BlogPostPageProps) {
   return (
     <main className="max-w-3xl mx-auto px-4 py-8 pt-30 min-h-screen grid place-content-center">
       <h1
-        className="text-3xl font-bold text-gray-900 mb-4 flex
+        className="text-3xl font-bold text-[#BB8819] mb-4 flex
        items-center gap-2"
       >
         <Image
-          src="/smallLogoMarwan.PNG"
+          src="/logo.png"
           alt="small Logo"
           width={40}
           height={40}
+          className="h-7 w-auto"
         />
         {post.title}
       </h1>

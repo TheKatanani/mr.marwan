@@ -23,7 +23,7 @@ function FAQ() {
   if (!faqs) return <FAQSkeleton />;
 
   return (
-    <div className="space-y-4 text-right w-full min-h-screen">
+    <div className="space-y-4 text-right w-full min-h-100">
       {faqs.map((item, index) => (
         <FAQItem
           key={item.id}

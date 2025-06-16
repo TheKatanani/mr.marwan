@@ -3,7 +3,7 @@ import React from 'react'
 export default function FAQItem({ item, index, activeId, toggle }) {
   return (
     <div 
-      className="border-2 border-[#C8105D] rounded-md relative"
+      className="border-2 border-[#BB8819] rounded-md relative"
     >
       <div className="flex flex-col gap-2">
         {/* Top Row: Question and Button */}
@@ -19,7 +19,7 @@ export default function FAQItem({ item, index, activeId, toggle }) {
 
           <button
             onClick={() => toggle(item.id)}
-            className=" w-20 h-full p-7 md:p-6 text-xl font-bold bg-[#C8105D] text-white flex items-center justify-center cursor-pointer"
+            className=" w-20 h-full p-7 md:p-6 text-xl font-bold bg-[#BB8819] text-white flex items-center justify-center cursor-pointer"
           >
             {activeId === item.id ? "-" : "+"}
           </button>

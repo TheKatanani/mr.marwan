@@ -15,13 +15,12 @@ export default async function Hero() {
         playsInline
       />
 
-      {/* Overlay */}
       <div
         className={`absolute inset-0 flex items-center justify-center md:justify-start`}
       >
-        <div className=" bg-black/60 absolute inset-0" />
+        <div className=" bg-gradient-to-l from-[#1E40AF] via-[#3B82F6] to-[#60A5FA] opacity-80 absolute inset-0" />
         <div className="container mx-20 z-10 max-w-3xl  justify-center md:justify-start">
-          <h1 className="text-2xl  md:text-4xl  font-bold mb-4 bg-gradient-to-r from-[#048ff8] via-yellow-500 to-[#0b2de4] bg-clip-text text-transparent">
+          <h1 className="text-2xl  md:text-4xl  font-bold mb-4 bg-gradient-to-r from-[#BB8819] to-[#F1DD6E] bg-clip-text text-transparent">
             {HeroData?.title}
           </h1>
           <p className="text-sm md:text-xl mb-6 leading-8">
@@ -29,10 +28,13 @@ export default async function Hero() {
           </p>
           <Link
             href={HeroData?.ctaLink || "/"}
-            className="btn-primary w-fit pb-20 relative"
+            className=" w-fit pb-20 relative"
             target="_blank"
           >
-            <button className="btn-primary w-fit pb-20 relative">
+            <button
+              className="btn-primary text-[#1979EB] w-fit pb-20 relative"
+              style={{ color: "#1979EB !importent" }}
+            >
               {HeroData?.ctaText}
             </button>
           </Link>

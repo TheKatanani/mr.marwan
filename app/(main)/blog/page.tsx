@@ -30,13 +30,13 @@ export default async function Blog() {
               key={post.id}
               className="bg-white rounded-xl shadow hover:shadow-lg transition p-6 border border-gray-100"
             >
-              <h2 className="text-xl font-bold text-pink-600 mb-2  flex items-center gap-3">
-                <Image
+              <h2 className="text-xl font-bold text-[#BB8819] mb-2  flex items-center gap-3">
+                {/* <Image
                   src="/smallLogoMarwan.PNG"
                   alt="small Logo"
                   width={30}
                   height={30}
-                />
+                /> */}
                 {post.title}
               </h2>
               <p className="text-gray-600 text-sm mb-4">
@@ -54,7 +54,7 @@ export default async function Blog() {
               <div className="mt-4">
                 <Link
                   href={`/blog/${post.id}`}
-                  className="text-sm text-pink-500 hover:underline"
+                  className="text-sm text-[#1E40AF] hover:underline"
                 >
                   قراءة المزيد
                 </Link>

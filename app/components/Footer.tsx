@@ -2,20 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/mock/data"; // Adjust the import path as needed
 import { fetchFooter } from "../lib/footer";
-import { getSocialLinks } from "../lib/socialMedia"; 
+import { getSocialLinks } from "../lib/socialMedia";
 import { TfiEmail } from "react-icons/tfi";
- 
 
 export default async function Footer() {
   const footerData = await fetchFooter();
   const socialLinks = await getSocialLinks();
   return (
-    <footer
-      className="relative bg-cover bg-center h-full   text-white pt-12 pb-10"
-      style={{ backgroundImage: "url('/web-banner-background.jpg')" }}
-    >
+    <footer className="relative bg-[#111827] bg-center h-full text-white pt-12 pb-10">
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 grid opacity-50 place-content-center">
+        <Image src={"/plane.png"} alt="plane" width={700} height={400} />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div
@@ -28,9 +27,9 @@ export default async function Footer() {
               <Image
                 src="/logo.png"
                 alt="Logo"
-                width={195}
-                height={60}
-                className="mx-auto md:mx-0 w-auto h-auto m-auto"
+                width={150}
+                height={100}
+                className="mx-auto md:mx-0 w-auto   m-auto"
                 priority
               />
             </div>
@@ -65,7 +64,7 @@ export default async function Footer() {
               <div className="text-right">
                 <div className="text-gray-300 text-sm">{footerData?.email}</div>
               </div>
-              <TfiEmail size={25}/>
+              <TfiEmail size={25} />
             </div>
 
             {/* Address */}
@@ -90,9 +89,8 @@ export default async function Footer() {
             </div>
 
             {/* Social Media - Dynamic */}
-            <div className="flex justify-center md:justify-end mt-4  gap-1"> 
-              {
-              socialLinks?.whatsapp && (
+            <div className="flex justify-center md:justify-end mt-4  gap-1">
+              {socialLinks?.whatsapp && (
                 <Link
                   href={socialLinks.whatsapp}
                   target="_blank"
@@ -106,10 +104,8 @@ export default async function Footer() {
                     className="w-10 h-10 object-contain"
                   />
                 </Link>
-              ) 
-            }
-              {
-              socialLinks?.facebook && (
+              )}
+              {socialLinks?.facebook && (
                 <Link
                   href={socialLinks.facebook}
                   target="_blank"
@@ -123,72 +119,67 @@ export default async function Footer() {
                     className="w-10 h-10 object-contain"
                   />
                 </Link>
-              ) 
-            }
-            {socialLinks?.instagram && (
-              <Link
-                href={socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="instagram"
-                  src="/instagram.svg"
-                  width={48}
-                  height={48}
-                  className="w-10 h-10 object-contain"
-                />
-              </Link>
-            )
-            }
-            {socialLinks?.tiktok && (
-              <Link
-                href={socialLinks.tiktok}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="tiktok"
-                  src="/tiktok.svg"
-                  width={48}
-                  height={48}
-                  className="w-10 h-10 object-contain"
-                />
-              </Link>
-            )
-            }
-            {socialLinks?.twitter && (
-              <Link
-                href={socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="twitter"
-                  src="/twitter.svg"
-                  width={48}
-                  height={48}
-                  className="w-10 h-10 object-contain"
-                />
-              </Link>
-            )
-            }
-            {socialLinks?.linkedin && (
-              <Link
-                href={socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="linkedin"
-                  src="/linkedin.svg"
-                  width={48}
-                  height={48}
-                  className="w-10 h-10 object-contain"
-                />
-              </Link>
-            )
-            }
+              )}
+              {socialLinks?.instagram && (
+                <Link
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    alt="instagram"
+                    src="/instagram.svg"
+                    width={48}
+                    height={48}
+                    className="w-10 h-10 object-contain"
+                  />
+                </Link>
+              )}
+              {socialLinks?.tiktok && (
+                <Link
+                  href={socialLinks.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    alt="tiktok"
+                    src="/tiktok.svg"
+                    width={48}
+                    height={48}
+                    className="w-10 h-10 object-contain"
+                  />
+                </Link>
+              )}
+              {socialLinks?.twitter && (
+                <Link
+                  href={socialLinks.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    alt="twitter"
+                    src="/twitter.svg"
+                    width={48}
+                    height={48}
+                    className="w-10 h-10 object-contain"
+                  />
+                </Link>
+              )}
+              {socialLinks?.linkedin && (
+                <Link
+                  href={socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    alt="linkedin"
+                    src="/linkedin.svg"
+                    width={48}
+                    height={48}
+                    className="w-10 h-10 object-contain"
+                  />
+                </Link>
+              )}
             </div>
           </div>
         </div>

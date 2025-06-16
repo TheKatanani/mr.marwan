@@ -27,15 +27,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className="w-full fixed top-0 right-0 z-50 text-xl px-5 py-2 shadow bg-cover bg-center"
-      style={{ backgroundImage: "url('/web-banner-background.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-slate-950 opacity-50 z-0"></div>
+      className="w-full bg-white text-black fixed top-0 right-0 z-50 text-xl px-5 py-2 shadow bg-cover bg-center"
+    > 
       <Container>
         <div className="container mx-auto flex items-center justify-between md:p-4 z-1 relative">
           {/* Logo on the right */}
           <Link href="/" className="flex items-center">
-            <Image src={logoUrl ||"/logo.png"} className="h-[70] w-auto object-contain" alt="Logo" width={140} height={60} />
+            <Image src={logoUrl ||"/logo.png"} className="h-[50] w-auto object-contain" alt="Logo" width={120} height={50} />
           </Link>
 
           {/* Desktop Links */}
@@ -47,8 +45,8 @@ const Navbar = () => {
                 <Link
                   key={href}
                   href={href}
-                  className={`transition hover:text-pink-500 ${
-                    isActive ? "text-pink-500 font-bold" : "text-white"
+                  className={`transition hover:text-[#BB8819] ${
+                    isActive ? "text-[#BB8819] font-bold" : "text-black"
                   }`}
                 >
                   {label}
@@ -61,9 +59,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu}>
               {isOpen ? (
-                <CloseIcon className="h-8 w-8 text-white" />
+                <CloseIcon className="h-8 w-8 text-black" />
               ) : (
-                <MenuIcon className="h-8 w-8 text-white" />
+                <MenuIcon className="h-8 w-8 text-black" />
               )}
             </button>
           </div>

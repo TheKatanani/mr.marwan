@@ -10,27 +10,27 @@ const CoreValuesSection = ({ data }: { data: AboutFormData }) => {
       <section className="custom-bg py-20  px-5 md:px-0">
         <div className="max-w-5xl space-y-14">
           <CoreValueItem
-            icon={<FaRoad size={30} color={"#f6339a"}/>}
+            icon={<FaRoad size={30} color={"#F1DD6E"}/>}
             title={data.journey?.title || ""}
             content={data.journey?.content || ""}
           />
           <CoreValueItem
-            icon={<FaLightbulb size={30} color={"#f6339a"}/>}
+            icon={<FaLightbulb size={30} color={"#F1DD6E"}/>}
             title={data.whyBuild?.title || ""}
             content={data.whyBuild?.content || ""}
           />
           <CoreValueItem
-            icon={<FaWrench size={30} color={"#f6339a"}/>}
+            icon={<FaWrench size={30} color={"#F1DD6E"}/>}
             title={data.howWeWork?.title || ""}
             content={data.howWeWork?.content || ""}
           />
           <CoreValueItem
-            icon={<FaHeart size={30} color={"#f6339a"}/>}
+            icon={<FaHeart size={30} color={"#F1DD6E"}/>}
             title={data.messageInLife?.title || ""}
             content={data.messageInLife?.content || ""}
           />
           <CoreValueItem
-            icon={<FaChalkboardTeacher size={30} color={"#f6339a"}/>}
+            icon={<FaChalkboardTeacher size={30} color={"#F1DD6E"}/>}
             title={data.messageInTraining?.title || ""}
             content={data.messageInTraining?.content || ""}
           />

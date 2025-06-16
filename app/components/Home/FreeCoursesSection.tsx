@@ -16,12 +16,12 @@ const FreeCoursesSection = async () => {
     <Container>
       <section className="py-16 text-gray-800 custom-bg min-h-screen" dir="rtl">
         <div className="flex justify-between items-center mb-10 px-2">
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-3xl font-bold text-black">
             الدورات التدريبية المجانية
           </h2>
           <Link
             href="/courses"
-            className="text-pink-400 hover:underline text-lg"
+            className="text-[#1979EB] hover:underline text-lg"
           >
             &laquo;&laquo; عرض الكل.
           </Link>
