@@ -1,3 +1,5 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -7,5 +9,6 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
 };
-
-module.exports = nextConfig;
+ 
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);

@@ -2,8 +2,7 @@ export interface HeroSectionData {
   title: string
   subtitle: string
   ctaText: string
-  ctaLink: string
-  backgroundVideoUrl: string
+  ctaLink: string 
 }
 export interface WhyAcademySectionData {
   title: string

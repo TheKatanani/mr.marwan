@@ -11,7 +11,7 @@ import FeatureCard from "../FeatureCard";
 const MarketingEbookSection = async () => {
   const bookData = await fetchBookSection();
   return (
-    <section className="custom-bg py-20 text-gray-800" dir="rtl">
+    <section className="custom-bg py-20 text-gray-800" >
       <Container>
         <div className="flex flex-col lg:flex-row items-center gap-10 mb-16">
           {/* Book image */}

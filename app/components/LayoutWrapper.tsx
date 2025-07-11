@@ -4,10 +4,12 @@ import { ReactNode } from "react";
 import FloatingWhatsAppButton from "./FloatingWhatsAppButton";
 import { FirebaseProvider } from "@/context/FirebaseProvider";
 import { AuthProvider } from "@/context/AuthContext";
+import { NextIntlClientProvider } from "next-intl";
 
 export default function LayoutWrapper({ children }: { children: ReactNode }) {
   return (
     <>
+    <NextIntlClientProvider> 
       <Navbar />
       <FirebaseProvider>
         <AuthProvider>
@@ -16,6 +18,7 @@ export default function LayoutWrapper({ children }: { children: ReactNode }) {
         </AuthProvider>
       </FirebaseProvider>
       <Footer />
+    </NextIntlClientProvider>
     </>
   );
 }

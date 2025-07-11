@@ -13,7 +13,8 @@ import {
   Timestamp,
   serverTimestamp,
 } from "firebase/firestore";
-import type { Post } from '@/types/post';
+import type {  Post } from '@/types/post';
+import { LocalizedField } from '@/types';
 
 // Helper function to convert Firestore Timestamp to Date
 const convertTimestamp = (timestamp: Timestamp | Date | undefined): Date | undefined => {
@@ -107,7 +108,7 @@ export async function getAllPostSlugs(): Promise<string[]> {
 }
 
 // ✅ Create a new post
-export async function createPost(data: { title: string; content: string }) {
+export async function createPost(data: { title: LocalizedField; content: LocalizedField }) {
   try {
     const postsCol = collection(db, "posts");
     const docRef = await addDoc(postsCol, {

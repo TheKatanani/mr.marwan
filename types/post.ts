@@ -1,11 +1,11 @@
 import type { Timestamp } from 'firebase/firestore';
-
-export interface Post {
+import { LocalizedField } from '.';
+ 
+export type Post = {
   id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  createdAt: Timestamp | Date; // Can be Timestamp from Firestore or Date object after conversion
+  title: LocalizedField;
+  content: LocalizedField;
+  createdAt: Timestamp | Date;
   updatedAt?: Timestamp | Date;
-}
+};
+ 

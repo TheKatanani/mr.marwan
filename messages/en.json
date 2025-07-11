@@ -1,0 +1,115 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "courses": "Courses",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "allCourses": "All Courses"
+  },
+  "contact": {
+    "imageAlt": "Contact image",
+    "heading": {
+      "before": "We're here to help you",
+      "highlight": "fly"
+    },
+    "description": "Have questions about our courses? Ready to start your aviation journey? Contact us today!",
+    "form": {
+      "title": "Send Us a Message",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "inquiryType": "Inquiry Type",
+      "inquiryTypePlaceholder": "e.g., Enrollment",
+      "subject": "Subject",
+      "subjectPlaceholder": "Enter the subject",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Send Message"
+    },
+    "info": {
+      "title": "Contact Us",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address",
+      "whatsapp": "WhatsApp"
+    },
+    "quickAnswers": {
+      "title": "Quick Answers"
+    }
+  },
+  "partners": {
+    "title": "partners"
+  },
+  "footer": {
+    "linkesTitle": "direct links"
+  },
+  "whyAcademy": {
+    "title": "Why Join Marwan Aviation Academy",
+    "subTitle": "We offer you the best learning experience in aviation, including:",
+    "features": [
+      {
+        "title": "Certified Training",
+        "description": "FAA-approved curriculum with internationally recognized certificates"
+      },
+      {
+        "title": "Expert Instructors",
+        "description": "Learn from experienced pilots with thousands of flight hours"
+      },
+      {
+        "title": "Modern Fleet",
+        "description": "Train on modern, well-maintained aircraft"
+      }
+    ]
+  },
+  "internationalTraining": {
+    "title": "Our Training Standards",
+    "subTitle": "We adhere to the highest international standards in aviation training to ensure safety, quality, and excellence." 
+  },
+  "popup": {
+    "title": "Hey There, Food Lover!",
+    "description": "Download our free guide packed with tips and strategies to grow your restaurant.",
+    "name": {
+      "label": "Full Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "your@email.com"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "+971..."
+    },
+    "submit": "Download Now",
+    "submitting": "Submitting...",
+    "cancel": "Cancel",
+    "successMessage": "Success! The ebook is now downloading.",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "mainCourses": {
+    "title": "Featured Courses",
+    "subTitle": "Start your aviation journey with our most popular programs"
+  },
+  "ourFacilities": {
+    "heading": "Our World-Class Facilities"
+  },
+  "clientReviews": {
+    "title": "What Our Students Say",
+    "subTitle": "Hear from our successful graduates about their experiences at Marwan Aviation Academy"
+  },
+  "FAQs": {
+    "title": "Frequently Asked Questions"
+  },
+  "trusted": {
+    "title": "Trusted by Authorities"
+  },
+  "HomeBanner": {
+    "studentSatisfaction": "Student Satisfaction",
+    "certifiedInstructors": "Certified Instructors",
+    "aircraftFleet": "Aircraft Fleet",
+    "trainedStudents": "Trained Students"
+  }
+}

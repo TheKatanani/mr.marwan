@@ -1,49 +1,52 @@
-import Image from "next/image";
 import Container from "../Container";
 import Title from "../Titile";
-import { fetchWhyAcademy } from "@/app/lib/home/whyAcademy";
+import FeatureCard from "../FeatureCard";
+import { CertifiedIcon, ExpertIcon, ModernIcon } from "@/app/icons";
+import { getTranslations } from "next-intl/server";
+
 const WhyAcademy = async () => {
-  const data = await fetchWhyAcademy();
+  const t = await getTranslations("whyAcademy");
+
+  const features = [
+    {
+      icon: <CertifiedIcon />,
+      title: t("features.0.title"),
+      description: t("features.0.description"),
+    },
+    {
+      icon: <ExpertIcon />,
+      title: t("features.1.title"),
+      description: t("features.1.description"),
+    },
+    {
+      icon: <ModernIcon />,
+      title: t("features.2.title"),
+      description: t("features.2.description"),
+    },
+  ];
+
   return (
     <section
       id="about"
-      className="w-full bg-gradient-to-r from-white via-[#e3f9ff] to-white  text-white py-16 min-h-screen grid place-items-center relative"
+      className="w-full bg-white text-gray-900 py-16 flex items-center"
     >
-      <Container className="pt-5 md:pt-0">
-        <div className="container mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
-          {/* Text Section */}
-          <div className="md:w-1/2   text-right px-4 pt-30 md:pt-0 ">
-            <Title>{data?.title}</Title>
-            <p className="text-lg pt-20 leading-8 text-gray-800">
-              {data?.description}
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center relative pt-30 md:pt-0  order-[-1] md:order-1">
-            {/* Main Image */}
-            <Image
-              src={data?.imageUrl || "/about.jpg"}
-              alt="academy"
-              width={380}
-              height={315}
-              className="rounded-2xl shadow-lg relative z-[1]"
+      <Container className="w-full">
+        <div className="w-full md:w-2/3 mx-auto text-center px-4 mb-12">
+          <Title subTitle={t("subTitle")}>{t("title")}</Title>
+        </div>
+        <div className="w-full grid gap-8 md:grid-cols-3 text-center">
+          {features.map((feature, idx) => (
+            <FeatureCard
+              key={idx}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
             />
-
-            {/* Overlay Image */}
-            <div className="absolute top-5 md:top-[-60px] right-[50px] z-0 w-[330px] h-[495px]">
-              <Image
-                src="/ideas.png"
-                alt="academy background"
-                fill
-                sizes="(max-width: 768px) 100vw, 330px"
-                className="object-contain"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </Container>
     </section>
   );
 };
+
 export default WhyAcademy;

@@ -7,10 +7,10 @@ interface FeatureCardProps {
 }
 
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
-  <div className="bg-gray-100 rounded-xl p-6 backdrop-blur-sm hover:bg-white transition text-center ">
+  <div className="bg-gray-50 rounded-xl p-6 backdrop-blur-sm hover:bg-white transition text-center ">
     <div className="mb-4 flex justify-center ">{icon}</div>
-    <h3 className="text-xl font-semibold mb-2 text-[#BB8819]">{title}</h3>
-    <p className="text-sm">{description}</p>
+    <h3 className="text-xl font-semibold  text-black p-4">{title}</h3>
+    <p className="text-sm text-gray-400">{description}</p>
   </div>
 );
 

@@ -1,24 +1,25 @@
 import type { Metadata } from "next";
-import "./globals.css";  
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "موقع الدكتور مروان العزاوي",
   description: "موقع الدكتور مروان العزاوي الرسمي",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar">
+    <html>
       <body
         className={`antialiased`}
         style={{ background: "white" }}
-        dir="rtl"
         suppressHydrationWarning={true}
-      > {children} 
+      >
+        {" "}
+        {children}
       </body>
     </html>
   );

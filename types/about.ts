@@ -1,20 +1,22 @@
+import { LocalizedField } from ".";
+
 export interface AboutSection {
-  title: string;
-  content: string;
+  title: LocalizedField;
+  content: LocalizedField;
 }
 
 export interface AboutFormData {
   hero: {
-    title: string;
-    description: string;
-    ctaText: string;
+    title: LocalizedField;
+    description: LocalizedField;
+    ctaText: LocalizedField;
     ctaLink: string;
     image: string;
   };
   section2: {
-    title: string;
+    title: LocalizedField;
+    description: LocalizedField;
     image: string;
-    description: string;
   };
   journey: AboutSection;
   whyBuild: AboutSection;

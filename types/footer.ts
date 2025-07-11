@@ -1,5 +1,7 @@
+import { LocalizedField } from ".";
+
 export interface Footer {
   email:string,
-  address:string,
-  paragraph:string
+  address:LocalizedField,
+  paragraph:LocalizedField
 }
