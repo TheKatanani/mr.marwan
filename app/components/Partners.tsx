@@ -5,17 +5,19 @@ import Title from "./Titile";
 import Link from "next/link";
 import Image from "next/image";
 import { Partner } from "@/types/servece";
+import { getTranslations } from "next-intl/server";
 
-function Partners({ data }: { data: Partner[] }) {
+async function Partners({ data }: { data: Partner[] }) {
+  const t = await getTranslations("partners");
   return (
-    <section className="py-16 my-10 bg-white px-4">
+    <section className="py-16  bg-gray-50 px-4">
       <div className="max-w-6xl mx-auto">
-        <Title className="mb-12 pb-10 m-auto w-fit">شركائنا</Title>
+        <Title className="pb-10 m-auto w-fit">{t("title")}</Title>
         <div className="flex flex-wrap items-center justify-center gap-8">
           {data?.map((item, idx) => (
             <div
               key={idx}
-              className="p-5 border-2 rounded-[50px] rounded-tl-none  h-[150px] grid place-content-center"
+              className="p-5 bg-white  h-[150px] aspect-[1/1] grid place-content-center"
             >
               {item.link ? (
                 <Link
@@ -29,7 +31,7 @@ function Partners({ data }: { data: Partner[] }) {
                     alt={`Partner ${idx}`}
                     width={120}
                     height={60} 
-                    className="object-contain h-auto w-auto"
+                    className="object-contain h-25 w-auto"
                   />
                 </Link>
               ) : (

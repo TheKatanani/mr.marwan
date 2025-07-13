@@ -1,3 +1,5 @@
+import { Review } from "./reviews";
+
 export interface SubscriptionPackage {
   packageName: string;
   headline: string;
@@ -5,11 +7,7 @@ export interface SubscriptionPackage {
   whatYouGet: string[];
   problemsWeSolve: string[];
   subscribeURL: string;
-} 
-interface Review {
-  qoute: string;
-  rating: number;
-}
+}  
 export interface Gallery { 
     images: string[];
     videos: string[]; 

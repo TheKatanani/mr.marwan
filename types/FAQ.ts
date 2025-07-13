@@ -1,5 +1,7 @@
-interface FAQType { 
+import { LocalizedField } from ".";
+
+export interface FAQType { 
   id?: string; 
-  question?: string;
-  answer?: string;
+  question?: LocalizedField;
+  answer?: LocalizedField;
 }

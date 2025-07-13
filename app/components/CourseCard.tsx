@@ -1,17 +1,24 @@
-/** @format */
-
-import { Course } from "@/types/course";
+"use client";
+import { CourseCardInfo } from "@/types/course";
 import Image from "next/image";
 import Link from "next/link";
-const CourseCard = (course: Course) => {
+import { Clock } from "lucide-react";
+import { LocalizedField } from "@/types";
+import { getLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
+type Props = {
+  card: CourseCardInfo;
+  id: string;
+};
+export default function CourseCard({ card, id }: Props) {
+  const locale = useLocale() as keyof LocalizedField;
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col w-full max-w-sm mx-auto">
-      {/* Image */}
-      <Link href={`/courses/${course.id}`} className="w-full">
-        <div className="relative w-full aspect-[4/3]">
+    <div className="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col">
+      <Link href={`/courses/${id}`}>
+        <div className="relative w-full aspect-[2/1]">
           <Image
-            src={course.image || "/Rectangle.png"}
-            alt={course.title}
+            src={card?.image || "/Rectangle.png"}
+            alt={card?.title[locale]}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 400px"
@@ -19,28 +26,23 @@ const CourseCard = (course: Course) => {
         </div>
       </Link>
 
-      {/* Content */}
-      <div className="p-4 text-start space-y-2">
-        <h3 className="text-lg font-semibold text-black">{course.title}</h3>
-        <p className="text-sm text-gray-500">{course.trainer}</p>
+      <div className="p-4 flex flex-col justify-between flex-grow">
+        <h3 className="text-lg font-semibold">{card?.title[locale]}</h3>
+        <p className="text-sm text-gray-600">
+          {card?.short_description[locale]}
+        </p>
 
-        {course.type === "free" ? (
-          <p className="text-lg text-black font-bold">مجاني</p>
-        ) : (
-          <div className="flex justify-between items-center">
-            <Link href={course.btnLink} target="_blank">
-              <button className="btn-primary flex-1">
-                {course.btnText || "اشترك الآن"}
-              </button>
-            </Link>
-            <span className="text-4xl font-semibold text-gray-800">
-              {course.cost}$
-            </span>
-          </div>
-        )}
+        <div className="flex items-center gap-2 text-gray-500 text-sm mt-2">
+          <Clock className="w-4 h-4" />
+          <span>{(card?.duration && card?.duration[locale]) ?? ""}</span>
+        </div>
+
+        <Link href={`/courses/${id}`}>
+          <button className="bg-blue-600 text-white text-sm font-medium w-full mt-2 py-2 rounded-lg hover:bg-blue-700">
+            Learn More
+          </button>
+        </Link>
       </div>
     </div>
   );
-};
-
-export default CourseCard;
+}
