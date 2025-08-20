@@ -1,4 +1,3 @@
-// app/dashboard/courses/new/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -21,6 +20,7 @@ export default function CreateCoursePage() {
       form && (await addCourse(form));
       router.push("/dashboard/courses");
     } catch (err) {
+      console.error(err)
       alert("Error saving course");
     } finally {
       setSaving(false);

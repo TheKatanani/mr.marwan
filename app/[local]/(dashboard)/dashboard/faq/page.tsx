@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { deleteFAQ, getFAQs } from "@/app/lib/faq";
 import { FAQType } from "@/types/FAQ";
-
+type FAQTypeWithId = FAQType & { id: string };
 export default function FAQDashboard() {
-  const [faqs, setFaqs] = useState<(FAQType & { id: string })[]>([]);
+  const [faqs, setFaqs] = useState<FAQTypeWithId[]>([]);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchFAQs = async () => {
       const data = await getFAQs();
-      setFaqs(data as any);
+      setFaqs(data as FAQTypeWithId[]);
     };
     fetchFAQs();
   }, []);

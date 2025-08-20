@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter, useParams, notFound } from "next/navigation";
 import { fetchFacility, updateFacility } from "@/app/lib/facilities";
 import ImageCard from "@/app/components/ImageCard";
@@ -15,9 +15,9 @@ export default function EditFacilityPage() {
     descEn: "",
     image: "",
   });
+  const { uploadMedia, uploading: isUploading } = useCloudinaryUploader();
   const facilityId = Array.isArray(id) ? id[0] : id;
   if (!facilityId) return notFound();
-  const { uploadMedia, uploading: isUploading } = useCloudinaryUploader();
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -43,9 +43,11 @@ export default function EditFacilityPage() {
 
   if (!form) return <p>Loading...</p>;
 
-  const handle = (e: any) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
-  const submit = async (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await updateFacility(facilityId, {
       title: { ar: form.titleAr, en: form.titleEn },
@@ -71,7 +73,7 @@ export default function EditFacilityPage() {
               <input
                 name="titleAr"
                 value={form.titleAr}
-                onChange={handle}
+                onChange={handleChange}
                 required
                 className="w-full border px-3 py-2"
               />
@@ -79,7 +81,7 @@ export default function EditFacilityPage() {
               <textarea
                 name="descAr"
                 value={form.descAr}
-                onChange={handle}
+                onChange={handleChange}
                 rows={3}
                 required
                 className="w-full border px-3 py-2"
@@ -94,7 +96,7 @@ export default function EditFacilityPage() {
               <input
                 name="titleEn"
                 value={form.titleEn}
-                onChange={handle}
+                onChange={handleChange}
                 required
                 className="w-full border px-3 py-2"
               />
@@ -102,7 +104,7 @@ export default function EditFacilityPage() {
               <textarea
                 name="descEn"
                 value={form.descEn}
-                onChange={handle}
+                onChange={handleChange}
                 rows={3}
                 required
                 className="w-full border px-3 py-2"
