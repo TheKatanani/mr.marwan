@@ -1,4 +1,4 @@
-import { GraduationCap, Phone, PhoneCall, PhoneIcon  } from "lucide-react";
+import { GraduationCap, Phone } from "lucide-react";
 
 export default function CTABar() {
   return (
@@ -8,7 +8,8 @@ export default function CTABar() {
           Ready to Start Your ICAO Training?
         </h2>
         <p className="text-sm md:text-base text-white/90 mb-8">
-          Join pilots worldwide who trust our ICAO-certified training programs<br />
+          Join pilots worldwide who trust our ICAO-certified training programs
+          <br />
           for their aviation careers
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">

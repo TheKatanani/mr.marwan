@@ -4,7 +4,7 @@
 
 import { getSocialLinks, updateSocialLinks } from "@/app/lib/socialMedia";
 import { SocialLinks } from "@/types/SocialLinks";
-import { FormEvent, use, useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 export default function SocialMediaForm() {
   // initialData: Partial<SocialLinks>;
@@ -81,7 +81,7 @@ export default function SocialMediaForm() {
           </label>
           <input
             id={platform}
-            type={platform === "whatsapp"?"string":"url"}
+            type={platform === "whatsapp" ? "string" : "url"}
             value={links[platform] || ""}
             onChange={(e) => setLinks({ ...links, [platform]: e.target.value })}
             placeholder={

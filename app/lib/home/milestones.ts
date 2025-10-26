@@ -1,8 +1,6 @@
 import { MilestonesData } from "@/types/milestones";
 import { db } from "../firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
-import { tr } from "zod/v4/locales";
-
+import { doc, getDoc, setDoc } from "firebase/firestore"; 
 const docRef = doc(db, "homePage", "milestones");
 
 export async function getMilestonesData(): Promise<MilestonesData> {

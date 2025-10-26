@@ -1,5 +1,3 @@
-const emptyLocalized = { en: "", ar: "" };
-
 const LocalizedList = ({
   label,
   value,

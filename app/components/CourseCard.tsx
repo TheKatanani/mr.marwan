@@ -3,8 +3,7 @@ import { CourseCardInfo } from "@/types/course";
 import Image from "next/image";
 import Link from "next/link";
 import { Clock } from "lucide-react";
-import { LocalizedField } from "@/types";
-import { getLocale } from "next-intl/server";
+import { LocalizedField } from "@/types"; 
 import { useLocale } from "next-intl";
 type Props = {
   card: CourseCardInfo;

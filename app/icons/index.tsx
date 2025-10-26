@@ -117,6 +117,7 @@ export const ICAOIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 65 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M32.1875 0C49.8606 0 64.1875 14.3269 64.1875 32C64.1875 49.6731 49.8606 64 32.1875 64C14.5144 64 0.1875 49.6731 0.1875 32C0.1875 14.3269 14.5144 0 32.1875 0Z"
@@ -148,6 +149,7 @@ export const IATAIcon = ({ className }: { className?: string }) => {
       height="64"
       viewBox="0 0 65 64"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -180,6 +182,7 @@ export const GCAAIcon = ({ className }: { className?: string }) => {
       height="64"
       viewBox="0 0 65 64"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -203,6 +206,7 @@ export const EASAIcon = ({ className }: { className?: string }) => {
       height="64"
       viewBox="0 0 65 64"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

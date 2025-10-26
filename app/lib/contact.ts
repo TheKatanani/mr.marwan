@@ -46,7 +46,7 @@ export async function contactFormAction(
       success: true,
       message: "✅ تم إرسال الرسالة بنجاح",
     };
-  } catch (err) {
+  } catch   {
     return {
       success: false,
       message: "حدث خطأ أثناء الإرسال",

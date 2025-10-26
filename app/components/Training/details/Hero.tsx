@@ -1,4 +1,4 @@
-import { ArrowRight, GraduationCap, Info, Phone } from "lucide-react";
+import { ArrowRight, GraduationCap, Info } from "lucide-react";
 import React from "react";
 import Image from "next/image";
 import { CourseHero } from "@/types/course";

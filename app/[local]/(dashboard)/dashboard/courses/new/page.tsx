@@ -1,4 +1,3 @@
-// app/dashboard/courses/new/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -8,19 +7,19 @@ import { addCourse } from "@/app/lib/cource";
 import CourseForm from "@/app/components/courses/forms/CourseForm";
 import { defaultCourse } from "../defoultState";
 
- 
-
 export default function CreateCoursePage() {
   const [form, setForm] = useState<Course>(defaultCourse);
   const [saving, setSaving] = useState(false);
-  const router = useRouter(); 
+  const router = useRouter();
 
   const handleSubmit = async () => {
     try {
       setSaving(true);
-      form && (await addCourse(form));
+      if (form) {
+        await addCourse(form);
+      }
       router.push("/dashboard/courses");
-    } catch (err) {
+    } catch {
       alert("Error saving course");
     } finally {
       setSaving(false);
@@ -34,6 +33,7 @@ export default function CreateCoursePage() {
         form={form}
         setForm={setForm}
         onSubmit={handleSubmit}
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         saving={saving}
       />
     </div>

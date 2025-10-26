@@ -20,9 +20,14 @@ export default function Courses() {
     })();
   }, []);
   useEffect(() => { 
-    courses
-      ? setVisibleCourses(showAll ? courses : courses?.slice(0, 3))
-      : setVisibleCourses([]);
+    const updateVisibleCourses = () => {
+      if (courses) {
+        setVisibleCourses(showAll ? courses : courses.slice(0, 3));
+      } else {
+        setVisibleCourses([]);
+      }
+    };
+    updateVisibleCourses();
   }, [courses, showAll]); 
   return (
     <section className="py-10 bg-white text-gray-800">

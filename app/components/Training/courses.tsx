@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import Container from "../Container";
 import Title from "../Titile";
-import CourseCard from "../CourseCard";
-import { getTranslations } from "next-intl/server";
+import CourseCard from "../CourseCard"; 
 import { getAllCourses } from "@/app/lib/cource";
 import { Course } from "@/types/course";
 

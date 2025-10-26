@@ -1,7 +1,7 @@
 import { AboutFormData } from "@/types/about";
 import Container from "@/app/components/Container";
 import { LocalizedField } from "@/types";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
 
 const Hero = async ({ data }: { data: AboutFormData }) => {
   const locale = await getLocale();

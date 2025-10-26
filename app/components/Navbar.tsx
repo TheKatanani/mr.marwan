@@ -27,6 +27,7 @@ export default function Navbar() {
     // { href: "/services", label: t("services") },
     // { href: "/courses", label: t("courses") },
     { href: "/blog", label: t("blog") },
+    { href: "/helicopter", label: t("helicopter") },
     { href: "/contact", label: t("contact") },
   ];
 
@@ -39,7 +40,7 @@ export default function Navbar() {
       ]);
       setLogoUrl(logo);
       setStandards(standards);
-      } catch (error) {
+      } catch   {
       // Optionally handle error
       setLogoUrl("/logo.png");
       setStandards([]);
