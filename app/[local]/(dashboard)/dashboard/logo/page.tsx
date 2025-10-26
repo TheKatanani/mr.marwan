@@ -1,6 +1,3 @@
-/** @format */
-
-import Title from "@/app/components/Titile";
 import React from "react";
 import LogoForm from "./LogoForm";
 

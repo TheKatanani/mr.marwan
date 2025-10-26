@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FAQItem from "./FAQItem";
 import FAQSkeleton from "../ui/FAQSkeleton";
 import { FAQType } from "@/types/FAQ";

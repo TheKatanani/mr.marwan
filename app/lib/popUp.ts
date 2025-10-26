@@ -20,7 +20,7 @@ export const addBookUsers = async (formData: FormData) => {
   try {
     await addDoc(bookUserConnection, newUser);
     return { success: true };
-  } catch (error) {
+  } catch   {
     return { errorMessage: "Ooops! There was a problem!" };
   }
 };
@@ -42,7 +42,7 @@ export const fetchBookUsers = async (): Promise<{ users?: BookUser[]; errorMessa
       };
     });
     return { users };
-  } catch (error) {
+  } catch   {
     return { errorMessage: "Failed to fetch book users." };
   }
 };

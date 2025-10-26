@@ -21,17 +21,7 @@ export async function fetchCourses(): Promise<Course[]> {
 
   return snap.docs.map((d) => {
     const data = d.data() as any;
-    return {
-      id: d.id,
-      title: data.title,
-      description: data.description,
-      btnText: data.btnText,
-      btnLink: data.btnLink,
-      image: data.image,
-      type: data.type,
-      cost: data.cost,  
-      duration: data.duration,
-    };
+    return { id: d.id, ...data } as Course;
   });
 }
 

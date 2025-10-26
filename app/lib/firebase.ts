@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics"; // Optional: Add if Analytics needed
+// import { getAnalytics } from "firebase/analytics"; // Optional: Add if Analytics needed
 import { getAuth, Auth } from "firebase/auth"; // Import Auth service
 import { FirebaseStorage, getStorage } from "firebase/storage";
 
@@ -16,7 +16,7 @@ const firebaseConfig = {
 
 let app: FirebaseApp;
 let db: Firestore;
-let analytics; // Optional
+// let analytics; // Optional
 let storage:FirebaseStorage ;
 let auth: Auth; // Declare Auth instance
 // Initialize Firebase only if it hasn't been initialized yet
@@ -25,9 +25,9 @@ if (!getApps().length) {
   db = getFirestore(app);
   auth = getAuth(app); // Initialize Auth
   
-  if (typeof window !== "undefined") { // Optional: Initialize Analytics only on client-side
-    analytics = getAnalytics(app);
-  }
+  // if (typeof window !== "undefined") { // Optional: Initialize Analytics only on client-side
+  //   analytics = getAnalytics(app);
+  // }
 } else {
   app = getApp();
   db = getFirestore(app);
@@ -35,9 +35,9 @@ if (!getApps().length) {
   storage = getStorage(app);
 // Get a reference to the storage service
  
-  if (typeof window !== "undefined") { // Optional
-    analytics = getAnalytics(app);
-  }
+  // if (typeof window !== "undefined") { // Optional
+  //   analytics = getAnalytics(app);
+  // }
 }
 
 

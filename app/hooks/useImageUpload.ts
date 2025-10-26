@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useCloudinaryUploader } from '@/app/hooks/useCloudinaryUploader';
+import { useState, useEffect } from "react";
+import { useCloudinaryUploader } from "@/app/hooks/useCloudinaryUploader";
 
 type UseImageUploadProps = {
   getImageUrl: () => string;
@@ -21,7 +21,7 @@ export const useImageUpload = ({
   const { uploadMedia } = useCloudinaryUploader();
 
   const [isUploading, setIsUploading] = useState(false);
-  const [uploadError, setUploadError] = useState('');
+  const [uploadError, setUploadError] = useState("");
   const [loading, setLoading] = useState(!!fetchImageUrl);
 
   useEffect(() => {
@@ -39,26 +39,34 @@ export const useImageUpload = ({
     if (!file) return;
 
     setIsUploading(true);
-    setUploadError('');
+    setUploadError("");
 
     try {
       const url = await uploadMedia(file);
       if (url) {
         setImageUrl(url);
-        updateImageUrl && (await updateImageUrl(url));
+
+        // before: updateImageUrl && (await updateImageUrl(url));
+        if (updateImageUrl) {
+          await updateImageUrl(url);
+        }
       } else {
-        setUploadError('Upload failed.');
+        setUploadError("Upload failed.");
       }
     } catch {
-      setUploadError('Something went wrong during upload.');
+      setUploadError("Something went wrong during upload.");
     } finally {
       setIsUploading(false);
     }
   };
 
   const handleRemove = async () => {
-    setImageUrl('');
-    removeImageUrl && (await removeImageUrl());
+    setImageUrl("");
+
+    // before: removeImageUrl && (await removeImageUrl());
+    if (removeImageUrl) {
+      await removeImageUrl();
+    }
   };
 
   return {

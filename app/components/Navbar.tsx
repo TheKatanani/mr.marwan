@@ -40,7 +40,7 @@ export default function Navbar() {
       ]);
       setLogoUrl(logo);
       setStandards(standards);
-      } catch (error) {
+      } catch   {
       // Optionally handle error
       setLogoUrl("/logo.png");
       setStandards([]);
