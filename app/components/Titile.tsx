@@ -9,9 +9,9 @@ interface ContainerProps {
 
 const Title = ({ className, children, subTitle }: ContainerProps) => {
   return (
-    <div className={`relative ${className}`}> 
+    <div className={`relative ${className} max-w-full`}> 
       <h2 className="text-4xl font-bold text-black z-1 relative p-3">{children}</h2>
-      <p className="text-gray-600 text-lg w-lg m-auto">{subTitle}</p>
+      <p className="text-gray-600 text-lg w-lg m-auto max-w-full">{subTitle}</p>
     </div>
   );
 };
