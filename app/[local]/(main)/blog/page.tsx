@@ -16,7 +16,7 @@ export default async function Blog() {
   const locale = await getLocale();
 
   return (
-    <section className="bg-gradient-to-r from-white via-[#e3f9ff] to-white min-h-screen py-16 text-gray-800">
+    <section className="bg-linear-to-r from-white via-[#e3f9ff] to-white min-h-screen py-16 text-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-10">
           <Title>المدونة</Title>
