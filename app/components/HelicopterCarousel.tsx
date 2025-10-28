@@ -86,7 +86,7 @@ export default function HelicopterCarousel() {
             1024: { slidesPerView: 3, spaceBetween: 40 },
           }}
           modules={[Navigation]}
-          className="h-full md:h-80 lg:h-[360px] flex items-center justify-center"
+          className="h-full flex items-center justify-center"
         >
           {helicopters.map((heli) => (
             <SwiperSlide key={heli.id} className="flex justify-center items-center relative">
