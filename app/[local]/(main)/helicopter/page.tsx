@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import HelicopterCarousel from "@/app/components/HelicopterCarousel";
+import dynamic from "next/dynamic";
+
+// Dynamically import the carousel with SSR disabled
+const HelicopterCarousel = dynamic(
+  () => import("@/app/components/HelicopterCarousel"),
+  { ssr: false }
+);
 
 function HelicopterDescription({ description }: { description: string }) {
   return (
@@ -35,7 +41,6 @@ function HelicopterUsage({ usage }: { usage: string }) {
 }
 
 export default function Helicopter() {
-  // const [selectedHelicopter, setSelectedHelicopter] = useState({
   const [selectedHelicopter] = useState({
     description:
       "This helicopter is engineered for performance and flexibility, providing exceptional comfort and control in various terrains and weather conditions.",
@@ -51,7 +56,7 @@ export default function Helicopter() {
 
   return (
     <div className="space-y-12">
-      <HelicopterCarousel /* onSelect={setSelectedHelicopter} */ />
+      <HelicopterCarousel />
 
       {selectedHelicopter && (
         <div className="max-w-6xl mx-auto px-4">
